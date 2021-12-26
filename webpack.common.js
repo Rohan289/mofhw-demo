@@ -8,13 +8,6 @@ module.exports = {
     path: path.join(__dirname, "public"),
     filename: "bundle.js"
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'YOUR_VARIABLE': JSON.stringify(process.env.YOUR_VARIABLE),
-      }
-    })
-  ],
   module: {
     rules: [
       {
