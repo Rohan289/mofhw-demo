@@ -8,9 +8,12 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new Dotenv()
+    new webpack.DefinePlugin({
+      'process.env': {
+        'YOUR_VARIABLE': JSON.stringify(process.env.YOUR_VARIABLE),
+      }
+    })
   ],
-
   module: {
     rules: [
       {
