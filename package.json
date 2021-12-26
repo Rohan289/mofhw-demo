@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.dev.js",
-    "start": "node server/server.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js"
   },
   "author": "",
@@ -19,7 +19,9 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "antd": "^4.17.4",
+    "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
+    "dotenv-webpack": "^7.0.3",
     "express": "^4.17.2",
     "prop-types": "^15.8.0",
     "react": "^17.0.2",
