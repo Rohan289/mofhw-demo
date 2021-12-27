@@ -12,6 +12,7 @@ class Home extends React.Component {
   }
   componentDidMount() {
     axios.get(`${process.env.BACKEND_BASE_URL}/list_covid_state_wise`).then(response => {
+      console.log("Response : ",response);
       this.setState({
         covidStateData : response.data
       })
@@ -23,7 +24,7 @@ class Home extends React.Component {
     <Fragment>
       {this.state.covidStateData && this.state.covidStateData.length > 0 ? (
       <Table tableData={this.state.covidStateData}
-        headingColumns={['Name of State', 'Total active case', 'Active case changes', 'Cumulative Discharged', 'Discharged case changes', 'Cumulative Deaths','Death case changes']}
+        headingColumns={['Name of State', 'Total Active Cases', 'New Active Cases', 'Cumulative Discharged', 'New Discharged Cases', 'Cumulative Deaths','New Death Cases']}
         title="COVID Data State Wise"
         />
       ) : <><p>Loading!!!</p></>}

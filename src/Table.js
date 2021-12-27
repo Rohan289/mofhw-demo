@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect , useState } from 'react';
 import PropTypes from 'prop-types';
+import { Icon } from 'semantic-ui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import axios from 'axios';
+import { columnMapping } from './constants';
 
 const Table = ({ tableData, headingColumns, title, breakOn = 'medium' }) => {
+    const [myValues, setMyValues] = useState(tableData);
+    useEffect(() => {
+        setMyValues(tableData);
+    },[tableData])
   let tableClass = 'table-container__table';
 
   if(breakOn === 'small') {
@@ -12,7 +20,7 @@ const Table = ({ tableData, headingColumns, title, breakOn = 'medium' }) => {
     tableClass += ' table-container__table--break-lg';
   }
 
-  const data = tableData.map((row, index) => {
+  const data = myValues.map((row, index) => {
     let rowData = [];
     let i = 0;
 
@@ -23,9 +31,33 @@ const Table = ({ tableData, headingColumns, title, breakOn = 'medium' }) => {
       });
       i++;
     }
+ 
+
+    const fetchData = (index,data) => {
+        if(data.key ===("New Death Cases") || data.key == ("New Active Cases") || data.key == ("New Discharged Cases")) {
+            if(parseInt(data.val) < 0) {
+                return(
+                    <>
+                    <td style={{color : "red", fontWeight : "bold"}} key={index} data-heading={data.key}>{data.val}</td>
+                    </>
+                )
+            }
+            else {
+                return(
+                    <td style={{color : "green",fontWeight : "bold"}} key={index} data-heading={data.key}>{data.val}</td>
+                )
+            }
+        }
+        else {
+        return(
+            <td key={index} data-heading={data.key}>{data.val}</td>
+        )
+        }
+    }
+
 
     return <tr key={index}>
-      {rowData.map((data, index) => <td key={index} data-heading={data.key}>{data.val}</td>)}
+      {rowData.map((data, index) => fetchData(index,data))}
     </tr>
   });
 
@@ -38,7 +70,13 @@ const Table = ({ tableData, headingColumns, title, breakOn = 'medium' }) => {
         <thead>
           <tr>
             {headingColumns.map((col, index) => (
-              <th key={index}>{col}</th>
+              <th key={index}>{col == "Name of State" ? <div>{col}</div> : (<div>{col}<i onClick={(e) => {
+                let sortByValue = columnMapping[col];
+                axios.get(`${process.env.BACKEND_BASE_URL}/filtered_list_covid_state_wise?sort_by=${sortByValue}`).then(response => {
+                   setMyValues(response.data);
+                  })
+              }} class="fa fa-sort-asc" aria-hidden="true"></i></div>)}
+              </th>
             ))}
           </tr>
         </thead>

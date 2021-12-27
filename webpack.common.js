@@ -8,12 +8,8 @@ module.exports = {
     path: path.join(__dirname, "public"),
     filename: "bundle.js"
   },
-  plugins : [
-    new webpack.DefinePlugin({
-      'process.env':{  
-        'BACKEND_BASE_URL': JSON.stringify(process.env.BACKEND_BASE_URL),
-      }
-    })
+  plugins: [
+    new Dotenv()
   ],
 
   module: {
@@ -27,7 +23,15 @@ module.exports = {
             test: /\.(scss|css)$/,
             exclude: /node_modules/,
             use : ['style-loader', 'css-loader', 'less-loader']        
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   }
 };
