@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.dev.js",
-    "start": "node server/server.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js"
   },
   "author": "",
@@ -21,7 +21,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
-    "antd": "^4.17.4",
+    "antd": "^4.18.0",
     "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
     "dotenv-webpack": "^7.0.3",
