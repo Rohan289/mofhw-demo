@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import '../App.scss';
 import axios from 'axios';
 import Table from './Table.js';
+import HeatMap from './HeatMap.jsx';
 
 class Home extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Home extends React.Component {
         title="COVID Data State Wise"
         />
       ) : <><p>Loading!!!</p></>}
-    
+      <HeatMap covidData={this.state.covidStateData} />
       
     </Fragment>
   );

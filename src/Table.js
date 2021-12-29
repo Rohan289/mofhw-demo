@@ -38,19 +38,19 @@ const Table = ({ tableData, headingColumns, title, breakOn = 'medium' }) => {
             if(parseInt(data.val) < 0) {
                 return(
                     <>
-                    <td style={{color : "red", fontWeight : "bold"}} key={index} data-heading={data.key}>{data.val}</td>
+                    <td style={{color : "red", fontWeight : "bold"}} key={index} data-heading={data.key}>{data.val}<i style={{color : "red"}} class="fa fa-arrow-down" aria-hidden="true"></i></td>
                     </>
                 )
             }
             else {
                 return(
-                    <td style={{color : "green",fontWeight : "bold"}} key={index} data-heading={data.key}>{data.val}</td>
+                    <td style={{color : "green",fontWeight : "bold"}} key={index} data-heading={data.key}>{data.val}<i style={{color : "green"}} class="fa fa-arrow-down" aria-hidden="true"></i></td>
                 )
             }
         }
         else {
         return(
-            <td key={index} data-heading={data.key}>{data.val}</td>
+            <td key={index} data-heading={data.key}>{data.val == "" ? "Total" : data.val}</td>
         )
         }
     }
