@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.dev.js",
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "node server/server.js",
     "build-prod": "webpack --config webpack.prod.js"
   },
   "author": "",
@@ -30,7 +30,6 @@
     "prop-types": "^15.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-loader-spinner": "^4.0.0",
     "react-simple-maps": "^2.3.0",
     "react-tooltip": "^4.2.21",
     "semantic-ui-react": "^2.0.4",
