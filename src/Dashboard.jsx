@@ -34,7 +34,8 @@ class Dashboard extends React.Component {
           </Col>
           <Col lg={24} xs={16}>
           <div style={{display : "flex",flexDirection : "row"}}>
-            <h6 className='h6-card'>{`${dashboardData ? dashboardData.current_active : ''}`}</h6>
+            <h6 className='h6-card'>{`${dashboardData ? dashboardData.current_active  : ''}`}</h6>
+            &nbsp;
             <h6 style={{color : "red"}} className='h6-card'>{`${dashboardData ? ` (${dashboardData.new_active}) ` : ''}`}</h6>
             </div>
           </Col>
@@ -50,6 +51,7 @@ class Dashboard extends React.Component {
           <Col lg={24} xs={16}>
           <div style={{display : "flex",flexDirection : "row"}}>
             <h6 className='h6-card'>{`${dashboardData ? dashboardData.current_discharged : ''}`}</h6>
+            &nbsp;
             <h6 style={{color : "green",fontWeight : "bold"}} className='h6-card'>{`${dashboardData ? ` (${dashboardData.new_discharged}) ` : ''}`}</h6>
             </div>
           </Col>
@@ -65,6 +67,7 @@ class Dashboard extends React.Component {
           <Col lg={24} xs={16}>
           <div style={{display : "flex",flexDirection : "row"}}>
             <h6 className='h6-card'>{`${dashboardData ? dashboardData.current_death : ''}`}</h6>
+            &nbsp;
             <h6 style={{color : "red"}} className='h6-card'>{`${dashboardData ? ` (${dashboardData.new_death}) ` : ''}`}</h6>
             </div>
           </Col>
@@ -77,6 +80,7 @@ class Dashboard extends React.Component {
           <Col>
           <div style={{display : "flex",flexDirection : "row"}}>
             <h6 style={{color : "white"}} className='h6-card'>{`Total Vaccination ${dashboardData ? `${dashboardData.total_vaccination}` : ''}`}</h6>
+            &nbsp;
             <h6 className='h6-card-yellow'>{`${dashboardData ? `(${dashboardData.new_vaccination})` : ''}`}</h6>
             </div>
           </Col>
