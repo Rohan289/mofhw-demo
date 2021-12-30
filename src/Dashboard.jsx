@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './Home.jsx';
 import { Card, Col, Row } from 'antd';
-import '../App.scss';
+import '../public/App.scss';
 import 'antd/dist/antd.css';
 import axios from 'axios';
 

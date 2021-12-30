@@ -4,7 +4,7 @@ import { scaleQuantile } from 'd3-scale';
 import ReactTooltip from 'react-tooltip';
 
 import LinearGradient from './LinearGradient.js';
-import '../App.scss';
+import '../public/App.scss';
 
 /**
 * Courtesy: https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/india.topo.json

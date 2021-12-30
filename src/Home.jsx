@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import '../App.scss';
+import '../public/App.scss';
 import axios from 'axios';
 import Table from './Table.js';
 import HeatMap from './HeatMap.jsx';

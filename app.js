@@ -1,7 +1,6 @@
 import * as ReactDOM from "react-dom";
 import * as React from "react";
 import Dashboard from "./src/Dashboard.jsx";
-
 const App = () =>  {
   return(
     <Dashboard />
