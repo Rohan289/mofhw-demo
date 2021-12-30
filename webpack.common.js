@@ -35,12 +35,7 @@ module.exports = {
             exclude: /node_modules/,
             use : ['style-loader', 'css-loader', 'less-loader']        
       },
-      {
-          
-        test:/\.s?css$/,
-        exclude: /node_modules/,
-        use : ['style-loader', 'css-loader', 'less-loader']        
-    },
+    
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [

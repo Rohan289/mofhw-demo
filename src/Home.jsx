@@ -4,6 +4,7 @@ import axios from 'axios';
 import Table from './Table.js';
 import HeatMap from './HeatMap.jsx';
 import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 class Home extends React.Component {
   constructor(props) {
