@@ -26,12 +26,6 @@ module.exports = {
         loader: "babel-loader"
       },
       {
-          
-        test:/\.s?css$/,
-        exclude: /node_modules/,
-        use : ['style-loader', 'css-loader', 'less-loader']        
-  },
-      {
         use: ['style-loader', 'css-loader'],
         test: /\.css$/
         },
@@ -41,6 +35,12 @@ module.exports = {
             exclude: /node_modules/,
             use : ['style-loader', 'css-loader', 'less-loader']        
       },
+      {
+          
+        test:/\.s?css$/,
+        exclude: /node_modules/,
+        use : ['style-loader', 'css-loader', 'less-loader']        
+    },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
