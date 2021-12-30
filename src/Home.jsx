@@ -3,6 +3,7 @@ import '../public/App.scss';
 import axios from 'axios';
 import Table from './Table.js';
 import HeatMap from './HeatMap.jsx';
+import Loader from "react-loader-spinner";
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,12 +24,29 @@ class Home extends React.Component {
   return (
     <Fragment>
       {this.state.covidStateData && this.state.covidStateData.length > 0 ? (
-      <Table tableData={this.state.covidStateData}
-        headingColumns={['Name of State', 'Total Active Cases', 'New Active Cases', 'Cumulative Discharged', 'New Discharged Cases', 'Cumulative Deaths','New Death Cases']}
-        title="COVID Data State Wise"
-        />
+      // <Table tableData={this.state.covidStateData}
+      //   headingColumns={['Name of State', 'Total Active Cases', 'New Active Cases', 'Cumulative Discharged', 'New Discharged Cases', 'Cumulative Deaths','New Death Cases']}
+      //   title="COVID Data State Wise"
+      //   />
+      <Loader
+        style={{display : "flex",flexDirection : "row", justifyContent : "center"}}
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={300000} //3 secs
+      />
       ) : <>
-      <h1>Loading!!!</h1> 
+      <Loader
+        style={{display : "flex",flexDirection : "row", justifyContent : "center"}}
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={300000} //3 secs
+      />
+    );
+
      </>}
       <HeatMap covidData={this.state.covidStateData} />
       

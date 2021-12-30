@@ -133,9 +133,6 @@ function HeatMap({covidData}) {
     setTooltipContent('');
   };
 
-  const onChangeButtonClick = () => {
-    setData(getHeatMapData());
-  };
 
   return (
     <div className="full-width-height container">
@@ -166,11 +163,7 @@ function HeatMap({covidData}) {
               })
             }
           </Geographies>
-        </ComposableMap>
-        <LinearGradient data={gradientData} />
-        <div className="center">
-          <button className="mt16" onClick={onChangeButtonClick}>Change</button>
-        </div>
+        </ComposableMap>    
     </div>
   );
 }
