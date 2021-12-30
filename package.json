@@ -24,6 +24,7 @@
     "antd": "^4.17.4",
     "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
+    "d3-scale": "^4.0.2",
     "dotenv-webpack": "^7.0.3",
     "express": "^4.17.2",
     "prop-types": "^15.8.0",
