@@ -25,18 +25,10 @@ class Home extends React.Component {
   return (
     <Fragment>
       {this.state.covidStateData && this.state.covidStateData.length > 0 ? (
-      // <Table tableData={this.state.covidStateData}
-      //   headingColumns={['Name of State', 'Total Active Cases', 'New Active Cases', 'Cumulative Discharged', 'New Discharged Cases', 'Cumulative Deaths','New Death Cases']}
-      //   title="COVID Data State Wise"
-      //   />
-      <Loader
-        style={{display : "flex",flexDirection : "row", justifyContent : "center"}}
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        timeout={300000} //3 secs
-      />
+      <Table tableData={this.state.covidStateData}
+        headingColumns={['Name of State', 'Total Active Cases', 'New Active Cases', 'Cumulative Discharged', 'New Discharged Cases', 'Cumulative Deaths','New Death Cases']}
+        title="COVID Data State Wise"
+        />
       ) : <>
       <Loader
         style={{display : "flex",flexDirection : "row", justifyContent : "center"}}

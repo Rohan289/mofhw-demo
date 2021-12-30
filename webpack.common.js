@@ -35,7 +35,12 @@ module.exports = {
             exclude: /node_modules/,
             use : ['style-loader', 'css-loader', 'less-loader']        
       },
-    
+      {
+        test: /\.s?[ac]ss$/,
+        include: [
+          path.resolve(__dirname, 'node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css'),
+        ]
+      },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
