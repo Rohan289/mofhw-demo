@@ -64,7 +64,7 @@ const Table = ({ tableData, headingColumns, title, breakOn = 'medium' }) => {
   return(
     <div className="table-container">
       <div className="table-container__title">
-        <h2>{title}</h2>
+        <h4 style={{color : "white",fontWeight : "bold"}}>{title}</h4>
       </div>
       <table className={tableClass}>
         <thead>
