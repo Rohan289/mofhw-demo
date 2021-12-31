@@ -36,7 +36,10 @@ class Dashboard extends React.Component {
           <div style={{display : "flex",flexDirection : "row"}}>
             <h6 className='h6-card'>{`${dashboardData ? dashboardData.current_active  : ''}`}</h6>
             &nbsp;
-            <h6 style={{color : "red"}} className='h6-card'>{`${dashboardData ? ` (${dashboardData.new_active}) ` : ''}`}</h6><i style={{color : "red", display : "flex",flexDirection : "column", justifyContent : "center", fontSize : "32px"}} class="fa fa-arrow-up" aria-hidden="true"></i>
+            <h6 style={{color : "red",fontWeight : "bold",display : "flex"}} className='h6-card'>
+              {`${dashboardData ? ` (${dashboardData.new_active}) ` : ''}`}
+              <i style={{color : "red", display : "flex",flexDirection : "column", justifyContent : "center", fontSize : "32px"}} class="fa fa-arrow-up" aria-hidden="true"></i>
+              </h6>
             </div>
           </Col>
           </Row>
@@ -52,7 +55,10 @@ class Dashboard extends React.Component {
           <div style={{display : "flex",flexDirection : "row"}}>
             <h6 className='h6-card'>{`${dashboardData ? dashboardData.current_discharged : ''}`}</h6>
             &nbsp;
-            <h6 style={{color : "green",fontWeight : "bold"}} className='h6-card'>{`${dashboardData ? ` (${dashboardData.new_discharged}) ` : ''}`}</h6><i style={{color : "green", display : "flex",flexDirection : "column", justifyContent : "center", fontSize : "32px"}} class="fa fa-arrow-up" aria-hidden="true"></i>
+            <h6 style={{color : "green",fontWeight : "bold",display : "flex"}} className='h6-card'>
+              {`${dashboardData ? ` (${dashboardData.new_discharged}) ` : ''}`}
+              <i style={{color : "green", display : "flex",flexDirection : "column", justifyContent : "center", fontSize : "32px"}} class="fa fa-arrow-up" aria-hidden="true"></i>
+              </h6>
             </div>
           </Col>
           </Row>
@@ -68,7 +74,9 @@ class Dashboard extends React.Component {
           <div style={{display : "flex",flexDirection : "row"}}>
             <h6 className='h6-card'>{`${dashboardData ? dashboardData.current_death : ''}`}</h6>
             &nbsp;
-            <h6 style={{color : "red"}} className='h6-card'>{`${dashboardData ? ` (${dashboardData.new_death}) ` : ''}`}</h6><i style={{color : "red", display : "flex",flexDirection : "column", justifyContent : "center", fontSize : "32px"}} class="fa fa-arrow-up" aria-hidden="true"></i>
+            <h6 style={{color : "red",fontWeight : "bold",display : "flex"}} className='h6-card'>{`${dashboardData ? ` (${dashboardData.new_death}) ` : ''}`}
+            <i style={{color : "red", display : "flex",flexDirection : "column", justifyContent : "center", fontSize : "32px"}} class="fa fa-arrow-up" aria-hidden="true"></i>
+            </h6>
             </div>
           </Col>
           </Row>
